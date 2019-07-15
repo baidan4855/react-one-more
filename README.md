@@ -1,20 +1,20 @@
-# react-one-more
+# react-add-more
 
-> add one more fields group into form
+> add more fields group into form
 
-[![NPM](https://img.shields.io/npm/v/react-one-more.svg)](https://www.npmjs.com/package/react-one-more) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/react-one-more.svg)](https://www.npmjs.com/package/react-add-more) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
 ```bash
-npm install --save react-one-more
+npm install --save react-add-more
 ```
 
 ## Usage
 
 ```jsx
 import React, { Component, useState } from 'react'
-import Addmore from 'react-one-more'
+import Addmore from 'react-add-more'
 
 const Item = ({ value, onChange }) => {
   const [obj, setObj] = useState(value)
