@@ -1,5 +1,4 @@
 import React, { Component, useState } from 'react'
-
 import Addmore from 'react-one-more'
 
 const Item = ({ value, onChange }) => {
@@ -20,17 +19,17 @@ const Item = ({ value, onChange }) => {
 }
 export default class App extends Component {
   state = {
-    value: [{ a: 1, b: 2 }],
+    value: [{ a: 1, b: 2 }]
   }
   render() {
     return (
-      <div>
+      <div style={{ width: '400px' }}>
         <Addmore
           value={this.state.value}
           Item={Item}
           onChange={value => {
-            this.setState({ value })
-            console.log(value)
+            this.setState({ value: [] })
+            console.log('result', value)
           }}
         />
       </div>

@@ -13,14 +13,41 @@ npm install --save react-one-more
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
+import Addmore from 'react-one-more'
 
-import MyComponent from 'react-one-more'
-
-class Example extends Component {
-  render () {
+const Item = ({ value, onChange }) => {
+  const [obj, setObj] = useState(value)
+  const handleChange = (key, value) => {
+    const newObj = { ...obj, [key]: value }
+    setObj(newObj)
+    onChange(newObj)
+  }
+  return (
+    <div>
+      <span>A:</span>
+      <input onChange={e => handleChange('a', e.target.value)} value={obj.a} />
+      <span>B:</span>
+      <input onChange={e => handleChange('b', e.target.value)} value={obj.b} />
+    </div>
+  )
+}
+export default class App extends Component {
+  state = {
+    value: [{ a: 1, b: 2 }],
+  }
+  render() {
     return (
-      <MyComponent />
+      <div style={{ width: '400px' }}>
+        <Addmore
+          value={this.state.value}
+          Item={Item}
+          onChange={value => {
+            this.setState({ value: [] })
+            console.log('result', value)
+          }}
+        />
+      </div>
     )
   }
 }
@@ -28,4 +55,4 @@ class Example extends Component {
 
 ## License
 
-MIT © [jack](https://github.com/jack)
+MIT © [jack](https://github.com/baidan4855)
