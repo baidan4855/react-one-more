@@ -19,7 +19,7 @@ const Item = ({ value, onChange }) => {
 }
 export default class App extends Component {
   state = {
-    value: [{ a: 1, b: 2 }]
+    value: []
   }
   render() {
     return (
@@ -28,10 +28,20 @@ export default class App extends Component {
           value={this.state.value}
           Item={Item}
           onChange={value => {
-            this.setState({ value: [] })
+            this.setState({ value })
             console.log('result', value)
           }}
-        />
+        >
+          {p => <button {...p}>+</button>}
+        </Addmore>
+        <button
+          onClick={() => {
+            const arr = [{ a: 1, b: 2 }]
+            this.setState({ value: arr })
+          }}
+        >
+          test
+        </button>
       </div>
     )
   }

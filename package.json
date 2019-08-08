@@ -1,6 +1,6 @@
 {
   "name": "react-add-more",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "add one more fields group into form",
   "author": "jack",
   "license": "MIT",
@@ -57,5 +57,6 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {}
 }
