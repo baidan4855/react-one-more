@@ -16,7 +16,7 @@ class Addmore extends React.Component {
     this.state = {
       dataArr: props.value
         ? props.value.map((v, i) => ({
-          _key: Date.now() + i,
+          _key: 'item-' + i,
           ...v
         }))
         : []
@@ -26,7 +26,7 @@ class Addmore extends React.Component {
     if (isArr(np.value) && !isEqual(np.value, this.props.value)) {
       this.setState({
         dataArr: np.value.map((v, i) => ({
-          _key: Date.now() + i,
+          _key: 'item-' + i,
           ...v
         }))
       })
